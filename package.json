@@ -47,7 +47,7 @@
   "devDependencies": {
     "electron": "9.1.0",
     "electron-builder": "22.7.0",
-    "electron-packager": "15.0.0"
+    "electron-packager": "15.1.0"
   },
   "build": {
     "appId": "com.kreativgebiet.${name}",
