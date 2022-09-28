@@ -45,7 +45,7 @@
     "keytar": "7.9.0"
   },
   "devDependencies": {
-    "electron": "19.0.9",
+    "electron": "19.1.1",
     "electron-builder": "23.1.0"
   },
   "build": {
