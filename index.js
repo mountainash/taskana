@@ -57,7 +57,7 @@ function createMainWindow() {
 			nodeIntegration: false,
 			contextIsolation: true,
 			sandbox: false, // needed to allow "require" in preload script - as per https://github.com/electron/electron/issues/35587#issuecomment-1238940105
-			preload: path.resolve(app.getAppPath(), 'browser.js'),
+			preload: path.resolve(app.getAppPath(), 'browser.cjs'),
 			partition: 'persist:asana',
 			spellcheck: true,
 		}
