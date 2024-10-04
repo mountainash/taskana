@@ -1,7 +1,7 @@
 {
   "name": "taskana",
   "productName": "Taskana",
-  "version": "1.17.0",
+  "version": "1.18.0",
   "description": "Application wrapper for Asana",
   "keywords": [
     "macOS",
@@ -31,6 +31,7 @@
     "url": "https://github.com/mountainash/taskana/issues"
   },
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "start": "electron .",
     "start:debug": "ELECTRON_DEBUG=true npm run start",

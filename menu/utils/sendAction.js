@@ -1,6 +1,6 @@
-const { BrowserWindow } = require('electron');
+import { BrowserWindow } from 'electron';
 
-module.exports = function sendAction(action) {
+export function sendAction(action) {
 	const [win] = BrowserWindow.getAllWindows();
 	if (process.platform === 'darwin') win.restore();
 	win.webContents.send(action);

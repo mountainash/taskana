@@ -1,6 +1,3 @@
-const { ipcRenderer } = require('electron');
-const keyStore = require('./src/keystore');
-
 ipcRenderer.on('new-task', () => {
 	document.querySelector('.Omnibutton').click();
 	document.querySelector('.Omnibutton-task').click();
