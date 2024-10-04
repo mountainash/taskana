@@ -8,16 +8,16 @@ ipcRenderer.on('new-task', () => {
 });
 
 ipcRenderer.on('show-preferences', () => {
-	document.querySelector('.TopbarSettingsMenuButton').click();
-	document.querySelector('.TopbarSettingsMenu-settings').click();
+	document.querySelector('.TopbarSettingsMenuButton')?.click();
+	document.querySelector('.TopbarSettingsMenu-settings')?.click();
 });
 
 document.addEventListener('readystatechange', async () => {
 	const DomHooks = {
-		'loginform': '.LoginEmailPasswordForm',
-		'loginusername': 'input[name=e]',
-		'loginpassword': 'input[name=p]',
-		'loginbutton': '[role=button]'
+		loginform: '.LoginEmailPasswordForm',
+		loginusername: 'input[name=e]',
+		loginpassword: 'input[name=p]',
+		loginbutton: '[role=button]',
 	};
 
 	if (document.location.pathname.endsWith('/login')) {
@@ -32,19 +32,19 @@ document.addEventListener('readystatechange', async () => {
 		const event = new Event('HTMLEvents');
 		event.initEvent('change', true, false);
 
-		if (loginkeys && loginkeys.username) {
+		if (loginkeys?.username) {
 			loginusername.value = loginkeys.username;
 			loginusername.dispatchEvent(event);
 		}
 
-		if (loginkeys && loginkeys.password) {
+		if (loginkeys?.password) {
 			loginpassword.value = loginkeys.password;
 			loginpassword.dispatchEvent(event);
 		}
 
-		const loginsubmitted = async function() {
-			let username = loginusername.value;
-			let password = loginpassword.value;
+		const loginsubmitted = async () => {
+			const username = loginusername.value;
+			const password = loginpassword.value;
 
 			if (username && password) {
 				await keyStore.deleteKeys(); // delete any exiting logins
@@ -55,14 +55,14 @@ document.addEventListener('readystatechange', async () => {
 		// add a listener to the form to capture login details and store them
 		// would be nice to add to just the <FORM> submit event, but React/Nuxt (used by Asana) captures the events lower in the DOM
 		// loginform.addEventListener('submit', loginsubmitted);
-		loginform.querySelector(DomHooks.loginbutton).addEventListener('click', loginsubmitted);
+		loginform
+			.querySelector(DomHooks.loginbutton)
+			.addEventListener('click', loginsubmitted);
 		loginusername.addEventListener('keyup', (e) => {
-			if (e.code == 'Enter')
-				loginsubmitted()
+			if (e.code === 'Enter') loginsubmitted();
 		});
 		loginpassword.addEventListener('keyup', (e) => {
-			if (e.code == 'Enter')
-				loginsubmitted()
+			if (e.code === 'Enter') loginsubmitted();
 		});
 	}
 });
