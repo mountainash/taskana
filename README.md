@@ -2,7 +2,7 @@
 
 ## Asana Official Version
 
-There is now an official Asana for Desktop app available for MacOS & Windows... but Taskana is still actively maintained.
+There is now an official Asana for Desktop app available for MacOS & Windows... but Taskana is still _*actively maintained*_.
 
 The [official version](https://forum.asana.com/t/asana-for-desktop-now-available-for-early-access/120008) also runs inside Election. Some of the difference are:
 
@@ -23,7 +23,7 @@ See website for usage tips:
 
 - <https://github.com/mountainash/taskana/releases>
 
-## Development
+## Develop
 
 Clone the repository into a folder on your system and be sure to have [Node.js](https://nodejs.org/) installed.
 
@@ -48,6 +48,16 @@ npm run build
 ```
 
 See [electron-builder](https://github.com/electron-userland/electron-builder) instructions to build for Linux and Windows.
+
+## Resources
+
+- [electron](https://www.electronjs.org/)
+- [electron-builder](https://www.electron.build/)
+- [electron-updater](https://www.electron.build/auto-update)
+- [keytar](https://atom.github.io/node-keytar/) Node module to manage system keychain
+- [electron-store](https://github.com/sindresorhus/electron-store#readme)
+- [electron-context-menu](https://github.com/sindresorhus/electron-context-menu#readme)
+- [Biome Rules](https://biomejs.dev/linter/rules/)
 
 ## License
 
