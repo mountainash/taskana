@@ -1,9 +1,9 @@
-const { app } = require('electron');
-const sendAction = require('./utils/sendAction');
+import { app } from 'electron';
+import { sendAction } from './utils/sendAction.js';
 
 const appName = app.getName();
 
-module.exports = {
+export default {
 	label: appName,
 	submenu: [
 		{

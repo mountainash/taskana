@@ -1,11 +1,11 @@
-const { Menu } = require('electron');
+import { Menu } from 'electron';
 
-const main = require('./main');
-const tasks = require('./tasks');
-const edit = require('./edit');
-const window = require('./window');
-const help = require('./help');
+import main from './main.js';
+import tasks from './tasks.js';
+import edit from './edit.js';
+import window from './window.js';
+import help from './help.js';
 
 const template = [main, tasks, edit, window, help];
 
-module.exports = Menu.buildFromTemplate(template);
+export default Menu.buildFromTemplate(template);

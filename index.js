@@ -1,10 +1,11 @@
-const { app, BrowserWindow, Menu, shell, ipcMain } = require('electron');
-const { autoUpdater } = require('electron-updater');
-const path = require('path');
-const menu = require('./menu');
-const contextMenu = require('electron-context-menu');
-const fs = require('fs');
-const Store = require('electron-store')
+import { app, BrowserWindow, Menu, shell, ipcMain } from 'electron';
+import electronUpdater from 'electron-updater';
+import contextMenu from 'electron-context-menu';
+import Store from 'electron-store';
+import path from 'node:path';
+import fs from 'node:fs';
+import menu from './menu/index.js';
+
 const config = new Store();
 
 const BASE_URL = 'https://app.asana.com/';
@@ -56,7 +57,7 @@ function createMainWindow() {
 			nodeIntegration: false,
 			contextIsolation: true,
 			sandbox: false, // needed to allow "require" in preload script - as per https://github.com/electron/electron/issues/35587#issuecomment-1238940105
-			preload: path.resolve(app.getAppPath(), 'browser.js'),
+			preload: path.resolve(app.getAppPath(), 'browser.cjs'),
 			partition: 'persist:asana',
 			spellcheck: true,
 		}
@@ -111,7 +112,7 @@ app.on('ready', () => {
 	mainWindow = createMainWindow();
 	page = mainWindow.webContents;
 
-	autoUpdater.checkForUpdatesAndNotify();
+	electronUpdater.autoUpdater.checkForUpdatesAndNotify();
 
 	// Open new browser window on external open
 	page.setWindowOpenHandler(({ url }) => {
@@ -142,7 +143,7 @@ app.on('ready', () => {
 
 	// Insert CSS
 	page.on('dom-ready', () => {
-		page.insertCSS(fs.readFileSync(path.join(__dirname, 'browser.css'), 'utf8'));
+		page.insertCSS(fs.readFileSync('browser.css', 'utf8'));
 		mainWindow.show();
 	});
 });

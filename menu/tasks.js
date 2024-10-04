@@ -1,6 +1,6 @@
-const sendAction = require('./utils/sendAction');
+import { sendAction } from './utils/sendAction.js';
 
-module.exports = {
+export default {
 	label: 'Tasks',
 	submenu: [{
 		label: 'New Task',

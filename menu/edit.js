@@ -1,4 +1,4 @@
-module.exports = {
+export default {
 	label: 'Edit',
 	submenu: [{
 		label: 'Undo',

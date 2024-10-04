@@ -1,7 +1,7 @@
-const { shell, app } = require('electron');
-const os = require('os');
+import { app, shell } from 'electron';
+import os from 'node:os';
 
-module.exports = {
+export default {
 	label: 'Help',
 	submenu: [
 		{

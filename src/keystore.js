@@ -1,4 +1,4 @@
-const keytar = require('keytar');
+import keytar from 'keytar';
 
 const keystorename = 'taskana';
 
@@ -38,4 +38,4 @@ const keyStore = {
 	deleteKeys: _deleteKeys
 }
 
-module.exports = keyStore;
+export default keyStore;

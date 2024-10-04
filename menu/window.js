@@ -1,6 +1,4 @@
-const { BrowserWindow } = require('electron');
-
-module.exports = {
+export default {
 	label: 'Window',
 	role: 'window',
 	submenu: [{
