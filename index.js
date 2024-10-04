@@ -1,9 +1,9 @@
-import { app, BrowserWindow, Menu, shell, ipcMain } from 'electron';
-import electronUpdater from 'electron-updater';
+import fs from 'node:fs';
+import path from 'node:path';
+import { BrowserWindow, Menu, app, ipcMain, shell } from 'electron';
 import contextMenu from 'electron-context-menu';
 import Store from 'electron-store';
-import path from 'node:path';
-import fs from 'node:fs';
+import electronUpdater from 'electron-updater';
 import menu from './menu/index.js';
 
 const config = new Store();
@@ -47,7 +47,7 @@ function updateBadgeInfo(title) {
 function createMainWindow() {
 	contextMenu();
 
-	let opts = {
+	const opts = {
 		title: app.getName(),
 		width: 1200,
 		height: 600,
@@ -60,7 +60,7 @@ function createMainWindow() {
 			preload: path.resolve(app.getAppPath(), 'browser.cjs'),
 			partition: 'persist:asana',
 			spellcheck: true,
-		}
+		},
 	};
 	Object.assign(opts, config.get('winBounds'));
 
@@ -91,7 +91,7 @@ function createMainWindow() {
 	return win;
 }
 
-if ( !app.requestSingleInstanceLock() ) {
+if (!app.requestSingleInstanceLock()) {
 	app.quit();
 }
 
@@ -104,9 +104,11 @@ app.on('second-instance', () => {
 
 ipcMain.on('update-menu', () => {
 	Menu.setApplicationMenu(menu.slice(1));
-})
+});
 
-app.on('before-quit', () => isQuitting = true);
+app.on('before-quit', () => {
+	isQuitting = true;
+});
 
 app.on('ready', () => {
 	mainWindow = createMainWindow();
@@ -116,8 +118,7 @@ app.on('ready', () => {
 
 	// Open new browser window on external open
 	page.setWindowOpenHandler(({ url }) => {
-		if ( basicURL(url) )
-			shell.openExternal(url);
+		if (basicURL(url)) shell.openExternal(url);
 
 		return { action: 'deny' }; // prevent a new Electron window
 	});

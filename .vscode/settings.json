@@ -18,13 +18,26 @@
 		"statusBar.foreground": "#FFF",
 		"statusBar.border": "#586573"
 	},
-    "cSpell.words": [
+	"cSpell.words": [
 		"Asana",
+		"biomejs",
 		"Dominik",
 		"doubleclick",
+		"hideothers",
+		"keychain",
 		"keystorename",
 		"keytar",
+		"loginbutton",
+		"loginform",
+		"loginkeys",
+		"loginpassword",
+		"loginsubmitted",
+		"loginusername",
+		"Nuxt",
+		"Omnibutton",
 		"Schmitt",
-		"Taskana"
+		"selectall",
+		"Taskana",
+		"Topbar"
 	]
 }

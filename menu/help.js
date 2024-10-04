@@ -1,5 +1,5 @@
-import { app, shell } from 'electron';
 import os from 'node:os';
+import { app, shell } from 'electron';
 
 export default {
 	label: 'Help',
@@ -17,7 +17,10 @@ export default {
 		},
 		{
 			label: 'Keyboard Shortcuts',
-			click: () => shell.openExternal('https://asana.com/guide/help/faq/shortcuts'),
+			click: () =>
+				shell.openExternal(
+					'https://asana.com/guide/help/faq/shortcuts'
+				),
 		},
 		{
 			type: 'separator',
@@ -54,7 +57,8 @@ export default {
 		},
 		{
 			label: `${app.getName()} Website...`,
-			click: () => shell.openExternal('https://mountainash.github.io/taskana/'),
+			click: () =>
+				shell.openExternal('https://mountainash.github.io/taskana/'),
 		},
 		{
 			label: 'Report an Issue...',
@@ -65,7 +69,11 @@ export default {
 ${app.getName()} ${app.getVersion()}
 ${process.platform} ${process.arch} ${os.release()}`;
 
-				shell.openExternal(`https://github.com/mountainash/taskana/issues/new?body=${encodeURIComponent(body)}`);
+				shell.openExternal(
+					`https://github.com/mountainash/taskana/issues/new?body=${encodeURIComponent(
+						body
+					)}`
+				);
 			},
 		},
 	],
