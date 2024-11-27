@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.3",
-    "electron": "32.1.2",
+    "electron": "33.2.1",
     "electron-builder": "25.1.7"
   },
   "packageManager": "npm@10.5.0",
