@@ -2,6 +2,7 @@
 .UpgradeButton,
 .BusinessUpgradeButton,
 .SidebarInvite,
+.Sidebar-withInvitebutton,
 .TopbarHelpMenuButton-button /* Most of these are in Taskana's Help menu */ {
 	display: none !important;
 }
