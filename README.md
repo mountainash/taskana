@@ -54,7 +54,6 @@ See [electron-builder](https://github.com/electron-userland/electron-builder) in
 - [electron](https://www.electronjs.org/)
 - [electron-builder](https://www.electron.build/)
 - [electron-updater](https://www.electron.build/auto-update)
-- [keytar](https://atom.github.io/node-keytar/) Node module to manage system keychain
 - [electron-store](https://github.com/sindresorhus/electron-store#readme)
 - [electron-context-menu](https://github.com/sindresorhus/electron-context-menu#readme)
 - [Biome Rules](https://biomejs.dev/linter/rules/)
