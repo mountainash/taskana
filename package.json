@@ -1,7 +1,7 @@
 {
   "name": "taskana",
   "productName": "Taskana",
-  "version": "1.18.1",
+  "version": "1.18.2",
   "description": "Application wrapper for Asana",
   "keywords": ["macOS", "wrapper", "electron", "asana", "tasks"],
   "author": "Nick Schmidt <nick@kreativgebiet.com>",
@@ -37,12 +37,12 @@
   "dependencies": {
     "electron-context-menu": "4.0.5",
     "electron-store": "10.0.1",
-    "electron-updater": "6.3.9"
+    "electron-updater": "6.6.2"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
-    "electron": "35.0.0",
-    "electron-builder": "25.1.8"
+    "electron": "35.0.2",
+    "electron-builder": "26.0.11"
   },
   "packageManager": "npm@11.2.0",
   "engines": {

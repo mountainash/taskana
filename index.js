@@ -1,4 +1,3 @@
-import fs from 'node:fs';
 import path from 'node:path';
 import { BrowserWindow, Menu, app, ipcMain, shell } from 'electron';
 import contextMenu from 'electron-context-menu';
@@ -143,8 +142,11 @@ app.on('ready', () => {
 	Menu.setApplicationMenu(menu);
 
 	// Insert CSS
-	page.on('dom-ready', () => {
-		page.insertCSS(fs.readFileSync('browser.css', 'utf8'));
+	page.on('did-finish-load', () => {
+		// Most of these are in Taskana's Help menu
+		page.insertCSS(
+			'.UpgradeButton,.BusinessUpgradeButton,.SidebarInvite,.Sidebar-withInvitebutton,.TopbarHelpMenuButton-button{display: none !important}'
+		);
 		mainWindow.show();
 	});
 });
