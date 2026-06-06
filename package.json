@@ -37,7 +37,7 @@
   "dependencies": {
     "electron-context-menu": "4.0.5",
     "electron-store": "10.0.1",
-    "electron-updater": "6.6.2"
+    "electron-updater": "6.8.9"
   },
   "devDependencies": {
     "@biomejs/biome": "1.9.4",
