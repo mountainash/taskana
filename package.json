@@ -40,7 +40,7 @@
     "electron-updater": "6.6.2"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.5.13",
     "electron": "35.0.2",
     "electron-builder": "26.0.11"
   },
